@@ -37,7 +37,12 @@ class Program
                     break;
                 case ("t"): 
                     Console.WriteLine("Vilket resmål vill du ta bort? ");
-                    .RemoveAt(Console.ReadLine());
+                    
+                    for (int i = 0; i<list.Count; i++)
+                        Console.WriteLine($"{i+1}, plats: {list[i].name}, år:  {list[i].year}, betyg: {list[i].grade}  ");
+                        Console.Write("Skriv in siffran för de resmål du vill ta bort: ");
+                        int input = int.Parse(Console.ReadLine());
+                        list.RemoveAt(input - 1);
                     break;
                 case ("v"):
                     foreach( Destination x in list)
